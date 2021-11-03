@@ -20,7 +20,7 @@ Run `ng test` to execute the ung nit tests via [Karma](https://karma-runner.gith
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities. If needed run `webdriver-manager start` first.
 
 ## Further help
 

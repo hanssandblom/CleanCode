@@ -19,7 +19,7 @@ describe('GolComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the GoL component', () => {
     expect(component).toBeTruthy();
   });
 });
