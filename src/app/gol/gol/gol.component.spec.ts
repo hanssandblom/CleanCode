@@ -34,16 +34,16 @@ describe('GolComponent', () => {
   });
 
   it('createGrid', () => {
-    const cols = 10;
+    const columns = 10;
     const rows = 10;
     spyOn(component, 'createGrid').and.callThrough();
-    component.createGrid(rows, cols);
+    component.createGrid(rows, columns);
     fixture.detectChanges();
     fixture.whenRenderingDone()
       .then( () => {
-        expect(component.createGrid).toHaveBeenCalledWith(rows, cols);
+        expect(component.createGrid).toHaveBeenCalledWith(rows, columns);
         expect(component.rows.length).toEqual(rows);
-        expect(component.col.length).toEqual(cols);
+        expect(component.col.length).toEqual(columns);
       });
   });
 });

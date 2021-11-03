@@ -19,9 +19,23 @@ export class GolComponent implements OnInit {
   }
 
   setGridSize = (rows: number, columns: number): void  => {
+    this.rows = this.createGrid(rows, columns);
   }
 
-  createGrid = (rows: number, cols: number) => {
+  createGrid = (rows: number, columns: number) => {
+    const output = [];
+    for (let i = 0; i < rows; i++){
+      const col = [];
+      for ( let j = 0; j < columns; j++){
+        const cell = {
+          active: false,
+          neighbours: 0
+        };
+        col.push(cell);
+      }
+      output.push({columns: col});
+    }
+    return output;
   }
 
 }
