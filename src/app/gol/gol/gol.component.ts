@@ -9,6 +9,8 @@ export class GolComponent implements OnInit {
 
   rowSize = 100;
   colSize = 100;
+  rows = [];
+  col = [];
 
   constructor() { }
 
