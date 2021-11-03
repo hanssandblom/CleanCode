@@ -21,4 +21,7 @@ export class GolComponent implements OnInit {
   setGridSize = (rows: number, columns: number): void  => {
   }
 
+  createGrid = (rows: number, cols: number) => {
+  }
+
 }

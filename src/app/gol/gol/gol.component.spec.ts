@@ -32,4 +32,18 @@ describe('GolComponent', () => {
         expect(component.col.length).toEqual(component.colSize);
       });
   });
+
+  it('createGrid', () => {
+    const cols = 10;
+    const rows = 10;
+    spyOn(component, 'createGrid').and.callThrough();
+    component.createGrid(rows, cols);
+    fixture.detectChanges();
+    fixture.whenRenderingDone()
+      .then( () => {
+        expect(component.createGrid).toHaveBeenCalledWith(rows, cols);
+        expect(component.rows.length).toEqual(rows);
+        expect(component.col.length).toEqual(cols);
+      });
+  });
 });
