@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GolComponent implements OnInit {
 
+  rowSize = 100;
+  colSize = 100;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.setGridSize(this.rowSize, this.colSize);
+  }
+
+  setGridSize = (rows: number, columns: number): void  => {
   }
 
 }

@@ -22,4 +22,12 @@ describe('GolComponent', () => {
   it('should create the GoL component', () => {
     expect(component).toBeTruthy();
   });
+
+  it('setGridSize', () => {
+    spyOn(component, 'setGridSize').and.callThrough();
+    fixture.whenRenderingDone()
+      .then( () => {
+        expect(component.setGridSize).toHaveBeenCalledWith(component.rowSize, component.colSize);
+      });
+  });
 });
