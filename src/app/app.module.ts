@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { GolComponent } from './gol/gol/gol.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { GolComponent } from './gol/gol/gol.component';
     GolComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
