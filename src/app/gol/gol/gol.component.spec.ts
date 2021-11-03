@@ -28,6 +28,8 @@ describe('GolComponent', () => {
     fixture.whenRenderingDone()
       .then( () => {
         expect(component.setGridSize).toHaveBeenCalledWith(component.rowSize, component.colSize);
+        expect(component.rows.length).toEqual(component.rowSize);
+        expect(component.rows[0].col.length).toEqual(component.colSize);
       });
   });
 });
