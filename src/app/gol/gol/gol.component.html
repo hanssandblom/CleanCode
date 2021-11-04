@@ -13,7 +13,7 @@
 
 <table id='grid'>
   <tr *ngFor="let row of rows">
-    <td *ngFor="let col of row.cols"
+    <td *ngFor="let col of row.columns"
         [ngClass]="{'active': col.active}"
         class="cell">
     </td>
