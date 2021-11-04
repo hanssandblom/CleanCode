@@ -41,8 +41,8 @@ export class GolComponent implements OnInit {
     let count = 0;
     for (let i = row - 1; i < row + 2; i++){
       for (let j = col - 1; j < col + 2; j++){
-        if ((i !== row || j !== col) && (this.rows[i]) && (this.rows[i].cols[j])){
-          if (this.rows[i].cols[j].active) {
+        if ((i !== row || j !== col) && (this.rows[i]) && (this.rows[i].colums[j])){
+          if (this.rows[i].colums[j].active) {
             count++;
           }
         }

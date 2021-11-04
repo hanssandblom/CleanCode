@@ -50,7 +50,7 @@ describe('GolComponent', () => {
 
   it('should checkNeighbours count to 3', () => {
     component.setGridSize(3, 3);
-    component.rows[0].cols.forEach((col: { active: boolean; }) => {
+    component.rows[0].columns.forEach((col: { active: boolean; }) => {
       col.active = true;
     });
     const CONTROL = component.checkNeighboursCells(1, 1);
@@ -59,7 +59,7 @@ describe('GolComponent', () => {
 
   it('should checkNeighbours count to 0', () => {
     component.setGridSize(3, 3);
-    component.rows[0].cols.forEach((col: { active: boolean; }) => {
+    component.rows[0].columns.forEach((col: { active: boolean; }) => {
       col.active = true;
     });
     const CONTROL = component.checkNeighboursCells(2, 2);
