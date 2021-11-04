@@ -47,4 +47,22 @@ describe('GolComponent', () => {
         expect(component.col.length).toEqual(columns);
       });
   });
+
+  it('should checkNeighbours count to 3', () => {
+    component.setGridSize(3, 3);
+    component.rows[0].cols.forEach((col: { active: boolean; }) => {
+      col.active = true;
+    });
+    const CONTROL = component.checkNeighboursCells(1, 1);
+    expect(CONTROL).toEqual(3);
+  });
+
+  it('should checkNeighbours count to 0', () => {
+    component.setGridSize(3, 3);
+    component.rows[0].cols.forEach((col: { active: boolean; }) => {
+      col.active = true;
+    });
+    const CONTROL = component.checkNeighboursCells(2, 2);
+    expect(CONTROL).toEqual(0);
+  });
 });
