@@ -10,3 +10,12 @@
     <input type="number" id="colInput" min="0" step="1" [value]="colSize" (input)="colSize = $any($event.target).value"/>
   </div>
 </div>
+
+<table id='grid'>
+  <tr *ngFor="let row of rows">
+    <td *ngFor="let col of row.cols"
+        [ngClass]="{'active': col.active}"
+        class="cell">
+    </td>
+  </tr>
+</table>

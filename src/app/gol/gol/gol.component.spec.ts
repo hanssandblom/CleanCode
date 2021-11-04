@@ -30,7 +30,7 @@ describe('GolComponent', () => {
       .then( () => {
         expect(component.setGridSize).toHaveBeenCalledWith(component.rowSize, component.colSize);
         expect(component.rows.length).toEqual(component.rowSize);
-        expect(component.col.length).toEqual(component.colSize);
+        expect(component.rows[0].col.length).toEqual(component.colSize);
       });
   });
 
@@ -44,7 +44,7 @@ describe('GolComponent', () => {
       .then( () => {
         expect(component.createGrid).toHaveBeenCalledWith(rows, columns);
         expect(component.rows.length).toEqual(rows);
-        expect(component.col.length).toEqual(columns);
+        expect(component.rows[0].col.length).toEqual(columns);
       });
   });
 
