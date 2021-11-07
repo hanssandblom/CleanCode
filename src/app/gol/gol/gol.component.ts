@@ -50,4 +50,8 @@ export class GolComponent implements OnInit {
     }
     return count;
   }
+
+  randomizeCells(MOCK_RUN_X_TIMES: number) {
+    
+  }
 }

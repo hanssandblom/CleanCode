@@ -9,9 +9,9 @@ describe('GolComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ GolComponent ]
+      declarations: [GolComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -27,7 +27,7 @@ describe('GolComponent', () => {
   it('setGridSize', () => {
     spyOn(component, 'setGridSize').and.callThrough();
     fixture.whenRenderingDone()
-      .then( () => {
+      .then(() => {
         expect(component.setGridSize).toHaveBeenCalledWith(component.rowSize, component.colSize);
         expect(component.rows.length).toEqual(component.rowSize);
         expect(component.rows[0].col.length).toEqual(component.colSize);
@@ -41,7 +41,7 @@ describe('GolComponent', () => {
     component.createGrid(rows, columns);
     fixture.detectChanges();
     fixture.whenRenderingDone()
-      .then( () => {
+      .then(() => {
         expect(component.createGrid).toHaveBeenCalledWith(rows, columns);
         expect(component.rows.length).toEqual(rows);
         expect(component.rows[0].col.length).toEqual(columns);
@@ -64,5 +64,19 @@ describe('GolComponent', () => {
     });
     const CONTROL = component.checkNeighboursCells(2, 2);
     expect(CONTROL).toEqual(0);
+  });
+
+  it('should randomize cells and active cells', () => {
+    const MOCK_RUN_X_TIMES = 2;
+    let control = 0;
+    component.randomizeCells(MOCK_RUN_X_TIMES);
+    component.rows.forEach((row: { cols: any[]; }) => {
+      row.cols.forEach(col => {
+        if (col.active === true) {
+          control++;
+        }
+      });
+    });
+    expect(control).toEqual(MOCK_RUN_X_TIMES);
   });
 });
