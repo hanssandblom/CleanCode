@@ -19,6 +19,7 @@
   <tr *ngFor="let row of rows">
     <td *ngFor="let col of row.columns"
         [ngClass]="{'active': col.active}"
+        (click)="changeCellStatus( rows.indexOf(row), row.columns.indexOf(col))"
         class="cell">
     </td>
   </tr>

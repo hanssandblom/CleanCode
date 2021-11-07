@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GolComponent implements OnInit {
 
-  rowSize = 100;
-  colSize = 100;
+  rowSize = 40;
+  colSize = 40;
   rows : any = [];
-  randomInputValue = 250;
+  randomInputValue = 60;
 
   constructor() { }
 
