@@ -53,7 +53,7 @@ describe('GolComponent', () => {
     component.rows[0].columns.forEach((col: { active: boolean; }) => {
       col.active = true;
     });
-    const CONTROL = component.checkNeighboursCells(1, 1);
+    const CONTROL = component.checkNeighbourCells(1, 1);
     expect(CONTROL).toEqual(3);
   });
 
@@ -62,7 +62,7 @@ describe('GolComponent', () => {
     component.rows[0].columns.forEach((col: { active: boolean; }) => {
       col.active = true;
     });
-    const CONTROL = component.checkNeighboursCells(2, 2);
+    const CONTROL = component.checkNeighbourCells(2, 2);
     expect(CONTROL).toEqual(0);
   });
 
@@ -78,5 +78,13 @@ describe('GolComponent', () => {
       });
     });
     expect(control).toEqual(MOCK_RUN_X_TIMES);
+  });
+
+  it('should change cell status', () => {
+    component.setGridSize(50, 50);
+    component.changeCellStatus(0, 0);
+    expect(component.rows[0].columns[0].active).toBeTrue();
+    component.changeCellStatus(0, 0);
+    expect(component.rows[0].columns[0].active).toBeFalse();
   });
 });

@@ -38,7 +38,7 @@ export class GolComponent implements OnInit {
     return output;
   }
 
-  checkNeighboursCells = (row: number, col: number): number => {
+  checkNeighbourCells = (row: number, col: number): number => {
     let count = 0;
     for (let i = row - 1; i < row + 2; i++){
       for (let j = col - 1; j < col + 2; j++){
@@ -60,5 +60,9 @@ export class GolComponent implements OnInit {
         this.randomizeCells(1) :
         this.rows[row].columns[col].active = true;
     }
+  }
+
+  changeCellStatus(number: number, number2: number) {
+    
   }
 }
