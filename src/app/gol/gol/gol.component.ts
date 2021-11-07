@@ -10,6 +10,7 @@ export class GolComponent implements OnInit {
   rowSize = 100;
   colSize = 100;
   rows : any = [];
+  randomInputValue = 250;
 
   constructor() { }
 
