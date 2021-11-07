@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GolComponent implements OnInit {
 
+  generateCellsMultiplier = 0;
+
   rowSize = 40;
   colSize = 40;
   rows : any = [];
@@ -64,5 +66,9 @@ export class GolComponent implements OnInit {
 
   changeCellStatus(i: number, j: number) {
     this.rows[i].columns[j].active = !this.rows[i].columns[j].active;
+  }
+
+  runTheGame() {
+
   }
 }

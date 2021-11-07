@@ -24,7 +24,7 @@ describe('GolComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('setGridSize', () => {
+  it('should call setGridSize', () => {
     spyOn(component, 'setGridSize').and.callThrough();
     fixture.whenRenderingDone()
       .then(() => {
@@ -34,7 +34,7 @@ describe('GolComponent', () => {
       });
   });
 
-  it('createGrid', () => {
+  it('should call createGrid', () => {
     const columns = 10;
     const rows = 10;
     spyOn(component, 'createGrid').and.callThrough();
@@ -86,5 +86,12 @@ describe('GolComponent', () => {
     expect(component.rows[0].columns[0].active).toBeTrue();
     component.changeCellStatus(0, 0);
     expect(component.rows[0].columns[0].active).toBeFalse();
+  });
+
+  it('should generate cells based on timer', () => {
+    jasmine.clock().install();
+    component.runTheGame();
+    jasmine.clock().tick(200);
+    expect((component.generateCellsMultiplier)).toEqual(10);
   });
 });
