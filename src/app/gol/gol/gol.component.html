@@ -3,7 +3,7 @@
 <div class="controls">
   <span class="counter">Counter {{ generateCellsMultiplier }}</span>
   <div id="gridCtrl">
-    <button (click)="setGridSize(rowSize, colSize)">New Game</button>
+    <button (click)="setGridSize(rowSize, colSize)">New Grid</button>
     <label for="rowInput" class='label'>Rows</label>
     <input type="number" id="rowInput" min="0" step="1" [value]="rowSize" (input)="rowSize = $any($event.target).value"/>
     <label for="colInput" class='label'>Columns</label>

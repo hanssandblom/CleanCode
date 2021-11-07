@@ -93,4 +93,8 @@ export class GolComponent implements OnInit {
   stopTheGame = () => {
     clearInterval(this.timer);
   }
+
+  clearTheGame() {
+
+  }
 }

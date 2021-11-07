@@ -99,4 +99,27 @@ describe('GolComponent', () => {
     component.stopTheGame();
     expect((component.timer)).toBeFalsy();
   });
+
+  it('should clear the grid and reset counter', () => {
+    component.setGridSize(6, 6);
+    component.generateCellsMultiplier = 10;
+    let CHECK = 0;
+    component.rows.forEach((row: { columns: any[]; }) => {
+      row.columns.forEach(col => {
+        col.active = true;
+      });
+    });
+    spyOn(component, 'stopTheGame');
+    component.clearTheGame();
+    component.rows.forEach((row: { columns: any[]; }) => {
+      row.columns.forEach(col => {
+        if (col.active) {
+          CHECK++;
+        }
+      });
+    });
+    expect(component.stopTheGame).toHaveBeenCalled();
+    expect(component.generateCellsMultiplier).toEqual(0);
+    expect(CHECK).toEqual(0);
+  });
 });
