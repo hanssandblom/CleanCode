@@ -94,4 +94,9 @@ describe('GolComponent', () => {
     jasmine.clock().tick(1000);
     expect((component.generateCellsMultiplier)).toEqual(10);
   });
+
+  it('should stop the generate of new cells', () => {
+    component.stopTheGame();
+    expect((component.timer)).toBeFalsy();
+  });
 });

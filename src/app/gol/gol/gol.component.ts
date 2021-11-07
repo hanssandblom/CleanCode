@@ -89,4 +89,8 @@ export class GolComponent implements OnInit {
       });
     }, 100);
   }
+
+  stopTheGame() {
+
+  }
 }
