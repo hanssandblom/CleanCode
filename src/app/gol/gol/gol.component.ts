@@ -51,7 +51,13 @@ export class GolComponent implements OnInit {
     return count;
   }
 
-  randomizeCells(MOCK_RUN_X_TIMES: number) {
-    
+  randomizeCells = (times: number) => {
+    for (let i = 0; i < times; i++){
+      const row = Math.floor(Math.random() * this.rowSize);
+      const col = Math.floor(Math.random() * this.colSize);
+      this.rows[row].columns[col].active ?
+        this.randomizeCells(1) :
+        this.rows[row].columns[col].active = true;
+    }
   }
 }

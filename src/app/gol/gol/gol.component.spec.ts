@@ -70,8 +70,8 @@ describe('GolComponent', () => {
     const MOCK_RUN_X_TIMES = 2;
     let control = 0;
     component.randomizeCells(MOCK_RUN_X_TIMES);
-    component.rows.forEach((row: { cols: any[]; }) => {
-      row.cols.forEach(col => {
+    component.rows.forEach((row: { columns: any[]; }) => {
+      row.columns.forEach( col => {
         if (col.active === true) {
           control++;
         }
