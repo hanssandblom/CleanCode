@@ -12,7 +12,8 @@ export class GolComponent implements OnInit {
   rowSize = 40;
   colSize = 40;
   rows : any = [];
-  randomInputValue = 60;
+  randomInputValue = 160;
+  timer: number | undefined;
 
   constructor() { }
 
@@ -68,7 +69,24 @@ export class GolComponent implements OnInit {
     this.rows[i].columns[j].active = !this.rows[i].columns[j].active;
   }
 
-  runTheGame() {
-
+  runTheGame = () => {
+    this.timer = setInterval(() => {
+      this.generateCellsMultiplier++;
+      this.rows.forEach((row: { columns: any[]; }, rowIndex: any) => {
+        const i = rowIndex;
+        row.columns.forEach((col, colIndex) => {
+          col.neighbours = this.checkNeighbourCells(i, colIndex);
+          switch (col.neighbours) {
+            case  3:
+              col.active = true;
+              break;
+            case 2:
+              break;
+            default:
+              col.active = false;
+          }
+        });
+      });
+    }, 100);
   }
 }

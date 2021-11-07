@@ -91,7 +91,7 @@ describe('GolComponent', () => {
   it('should generate cells based on timer', () => {
     jasmine.clock().install();
     component.runTheGame();
-    jasmine.clock().tick(200);
+    jasmine.clock().tick(1000);
     expect((component.generateCellsMultiplier)).toEqual(10);
   });
 });

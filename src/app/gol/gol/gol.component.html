@@ -1,7 +1,7 @@
 <h1>CleanCode Game of Life game</h1>
 
 <div class="controls">
-  <span class="counter">Counter</span>
+  <span class="counter">Counter {{ generateCellsMultiplier }}</span>
   <div id="gridCtrl">
     <button (click)="setGridSize(rowSize, colSize)">New Grid</button>
     <label for="rowInput" class='label'>Rows</label>
@@ -12,6 +12,7 @@
   <div class="cellsCtrl">
     <button (click)="randomizeCells(randomInputValue)">Randomize cells</button>
     <input type="number" id="randomInput" min="0" step="1" max="rowSize * colSize" [value]="randomInputValue" (input)="randomInputValue = $any($event.target).value"/>
+    <button (click)="runTheGame()">Start</button>
   </div>
 </div>
 
