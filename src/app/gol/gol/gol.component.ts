@@ -62,7 +62,7 @@ export class GolComponent implements OnInit {
     }
   }
 
-  changeCellStatus(number: number, number2: number) {
-    
+  changeCellStatus(i: number, j: number) {
+    this.rows[i].columns[j].active = !this.rows[i].columns[j].active;
   }
 }
