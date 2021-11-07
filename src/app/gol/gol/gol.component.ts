@@ -94,7 +94,13 @@ export class GolComponent implements OnInit {
     clearInterval(this.timer);
   }
 
-  clearTheGame() {
-
+  clearTheGame = () => {
+    this.stopTheGame();
+    this.generateCellsMultiplier = 0;
+    this.rows.forEach((row: { columns: any[]; }) => {
+      row.columns.forEach(col => {
+        col.active = false;
+      });
+    });
   }
 }
